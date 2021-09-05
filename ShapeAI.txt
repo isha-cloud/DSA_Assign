@@ -1,0 +1,278 @@
+Q1.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int a = 5, b = 10, temp;
+
+    cout << "Before swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    temp = a;
+    a = b;
+    b = temp;
+
+    cout << "\nAfter swapping." << endl;
+    cout << "a = " << a << ", b = " << b << endl;
+
+    return 0;
+}
+
+Q2.
+1.	#include<iostream>
+2.	using namespace std;
+3.	int main() {
+4.		int num1,num2,num3;
+5.		cout<<" Enter value for first number";
+6.		cin>>num1;
+7.		cout<<" Enter value for second number";
+8.		cin>>num2;
+9.		cout<<" Enter value for third number";
+10.		cin>>num3;
+11.		if(num1>num2&&num1>num3) {
+12.			cout<<" First number is greatest:"<<endl<<"whick is= "<<num1;
+13.		} else if(num2>num1&&num2>num3) {
+14.			cout<<" Second number is greatest"<<endl<<"whick is= "<<num2;
+15.		} else {
+16.			cout<<" Third number is greatest"<<endl<<"whick is= "<<num3;
+17.		}
+18.		return 0;
+19.	}
+
+Q3.
+1.	#include <iostream>
+2.	using namespace std;
+3.	 
+4.	int main()
+5.	{
+6.	    int year;
+7.	 
+8.	    cout << "Enter the year in yyyy format : ";
+9.	    cin >> year;
+10.	    if (year % 4 == 0)
+11.	        cout << year << " is a leap year";
+12.	    else
+13.	        cout << year << " is not a leap year";
+14.	}
+
+Q4.
+#include<iostream>
+    using namespace std;
+    //main program
+    int main()
+    {
+    // initialising variables
+    int limit, first=0, second=1, next, num;
+    cout <<“Enter the limit of Fibonacci series”<<endl;
+    // user input
+    cin >> num;   
+    cout << “First “<<num<<” terms of Fibonacci series are :- “<<endl;
+    //loop for printing fibonacci series
+    for(int p=0;p<num;p++)
+    {
+        if (p <= 1)
+            next = p;
+        else
+        {
+            next = first + second;
+            first = second;
+            second = next;
+        }
+        cout<<next<<” “;
+    }
+    return 0;
+    }
+
+
+
+
+
+
+
+Q5.
+1.	#include <iostream>  
+2.	using namespace std;  
+3.	int main()  
+4.	{  
+5.	  int n, i, m=0, flag=0;  
+6.	  cout << "Enter the Number to check Prime: ";  
+7.	  cin >> n;  
+8.	  m=n/2;  
+9.	  for(i = 2; i <= m; i++)  
+10.	  {  
+11.	      if(n % i == 0)  
+12.	      {  
+13.	          cout<<"Number is not Prime."<<endl;  
+14.	          flag=1;  
+15.	          break;  
+16.	      }  
+17.	  }  
+18.	  if (flag==0)  
+19.	      cout << "Number is Prime."<<endl;  
+20.	  return 0;  
+21.	}  
+
+Q6.
+// C++ code to demonstrate star pattern
+#include <iostream>
+using namespace std;
+ 
+// Function to demonstrate printing pattern
+void triangle(int n)
+{
+    // number of spaces
+    int k = 2 * n - 2;
+ 
+    // Outer loop to handle number of rows
+    // n in this case
+    for (int i = 0; i < n; i++) {
+ 
+        // Inner loop to handle number spaces
+        // values changing acc. to requirement
+        for (int j = 0; j < k; j++)
+            cout << " ";
+ 
+        // Decrementing k after each loop
+        k = k - 1;
+ 
+        // Inner loop to handle number of columns
+        // values changing acc. to outer loop
+        for (int j = 0; j <= i; j++) {
+            // Printing stars
+            cout << "* ";
+        }
+ 
+        // Ending line after each row
+        cout << endl;
+    }
+}
+ 
+// Driver Code
+int main()
+{
+    int n = 5;
+   
+      // Function Call
+    triangle(n);
+    return 0;
+}
+
+Q7.
+
+#include <iostream>
+using namespace std;
+int main(){
+   int n, num[50], largest, second;
+   cout<<"Enter number of elements: ";
+   cin>>n;
+   for(int i=0; i<n; i++){
+      cout<<"Enter Array Element"<<(i+1)<<": ";
+      cin>>num[i];
+   }
+   /* Here we are comparing first two elements of the
+    * array, and storing the largest one in the variable
+    * "largest" and the other one to "second" variable.
+    */
+   if(num[0]<num[1]){ 
+      largest = num[1];
+      second = num[0];
+   }
+   else{ 
+      largest = num[0];
+      second = num[1];
+   }
+   for (int i = 2; i< n ; i ++) {
+      /* If the current array element is greater than largest
+       * then the largest is copied to "second" and the element
+       * is copied to the "largest" variable.
+       */
+      if (num[i] > largest) {
+         second = largest;
+         largest = num[i];
+      }
+      /* If current array element is less than largest but greater
+       * then second largest ("second" variable) then copy the
+       * element to "second"
+       */
+      else if (num[i] > second && num[i] != largest) {
+         second = num[i];
+      }
+   }
+   cout<<"Second Largest Element in array is: "<<second;
+   return 0;
+}
+
+
+
+
+Q8.
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int N, d; cin >> N >> d;
+    vector<int> v(N);
+    for (size_t i = 0; i < v.size(); ++i) {
+        cin >> v[i];
+    }
+    d = d % N;
+    for (int i = d; i < N; ++i)
+        cout << v[i] << ' ';
+    for (int i = 0; i < d; ++i)
+        cout << v[i] << ' ';
+   
+    return 0;
+}
+
+
+
+Q9.
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() 
+{
+    int n,temp;
+    cin>>temp;
+    while(cin>>n)
+    {
+        if(n<38)
+            cout<<n<<endl;
+        else if(n%5 >= 3)
+            cout<<n+ (5-n%5)<<endl;
+        else
+            cout<<n<<endl;
+
+    }
+    return 0;
+}
+
+
+Q10.
+
+#include <iostream>
+
+int main()
+{
+    std::string input;
+    std::cin >> input;
+    
+    int words = 1;
+    for (int i = 0; i < input.length(); ++i)
+    {
+        if (input[i] < 97)
+        {
+            words++;
+        }
+    }
+    std::cout << words;
+}
+
